@@ -1,0 +1,19 @@
+
+.ios, .md {
+ 
+    dsl-map {
+      .scroll-content {
+        height: 100%
+      }
+      
+      h1 {
+        text-align: center;
+      }
+
+      #googlemap {
+          background-color: blue;
+          width: 100%;
+          height: 100%;
+      }
+    }
+}

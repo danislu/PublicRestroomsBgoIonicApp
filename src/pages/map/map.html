@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <!--ion-buttons start>
+      <button ion-button color="royal" (click)="initialize()">
+        <ion-icon name="man"></ion-icon>
+        <ion-icon name="woman"></ion-icon>
+      </button>
+    </ion-button-->
+    <ion-title>Doss</ion-title>
+    <ion-buttons end>
+      <button ion-button color="royal" (click)="centerOnDevice()" *ngIf="!(isLoadingPosition | async)">
+        <ion-icon name="pin"></ion-icon>
+      </button>
+      <ion-spinner *ngIf="(isLoadingPosition | async)"></ion-spinner>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <dsl-map 
+    [headline]="headline$"
+    [zoom]="zoom" 
+    [center]="center" 
+    [markers]="markers" 
+    (centerChanged)="centerChanged($event)" 
+    (zoomChanged)="zoomChanged($event)"></dsl-map>  
+</ion-content>
